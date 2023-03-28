@@ -182,7 +182,7 @@ adverbButton.addEventListener('click', () => {
         storyText.classList.add('show-storyText');
 
             storyText.innerHTML = `
-            It has often been said that "a dog is a man's best ${noun1.value}." Dogs are very  ${adjective1.value}.and can be taught many ${adjective2.value} tricks. A dog can be trained to carry a ${noun2.value} in his mouth. And if you throw his ${noun2.value}, he will run and fetch it. Dogs will also bark  ${adverb.value}. if someone tries to break into your ${noun3.value} during the night. One of the most popular canine pets today is the ${color.value} Spaniel. Spaniels have curly ${noun4.value} coats and ${adjective3.value} ears. They also have very ${adjective4.value} dispositions and live to be ${number.value} years old. Other popular dogs are ${noun5.value} Terriers, German ${noun6.value}, and the ${noun7.value} Poodle. Every home should have a loyal dog for a ${pluralNoun.value}.`
+            It has often been said that "a dog is a man's best ${noun1.value}." Dogs are very  ${adjective1.value} and can be taught many ${adjective2.value} tricks. A dog can be trained to carry a ${noun2.value} in his mouth. And if you throw his ${noun2.value}, he will run and fetch it. Dogs will also bark  ${adverb.value} if someone tries to break into your ${noun3.value} during the night. One of the most popular canine pets today is the ${color.value} Spaniel. Spaniels have curly ${noun4.value} coats and ${adjective3.value} ears. They also have very ${adjective4.value} dispositions and live to be ${number.value} years old. Other popular dogs are ${noun5.value} Terriers, German ${noun6.value}, and the ${noun7.value} Poodle. Every home should have a loyal dog for a ${pluralNoun.value}.`
 
     })
 
