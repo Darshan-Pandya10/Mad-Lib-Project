@@ -1,0 +1,178 @@
+:root{
+    --title-font : 'MuseoModerno', cursive;
+    --card-header : 'Bebas Neue', cursive;
+    --simple-font : 'Poppins', sans-serif;
+    --background-color : #E7EAF6;
+    --header-background-color : #D3D5FD;
+    --number-color : #4859ae;
+}
+
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    margin: 2rem;
+    background-color: var(--background-color);
+}
+
+header{
+    font-family: var(--title-font);
+    background-color:var(--header-background-color);
+    padding: 1rem 4rem;
+    letter-spacing: 0.3rem;
+    border-radius: 0.5rem;
+    color: #0B0B0D;
+    font-size: 1.2rem;
+}
+
+.detail-section {
+    margin: 2rem;
+}
+
+details{
+    border: 2px solid black;
+    padding: 1rem;
+    margin: 1rem 1rem 2rem 1rem; 
+    width: fit-content;
+    border-radius: 0.5rem;
+}
+
+summary{
+    font-family: var(--title-font);
+    list-style: none;
+    letter-spacing: 0.1rem;
+    cursor: pointer;
+}
+
+details p {
+    font-family: var(--simple-font);
+    margin: 0.5rem;
+    color: rgb(0, 0, 0);
+}
+
+p span {
+    color : var(--number-color);
+    letter-spacing: 0.1rem;
+}
+
+main {
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 60vw;
+    height: auto;
+}
+
+.card{
+    width: 25rem;
+    height: 15rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 1.8rem 2rem;
+    padding: 1rem;
+    transition: transform 200ms ease-in-out;
+    color: black;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    background-color: #ffffff95;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.number{
+    color: #000000;
+}
+
+.card:hover .number{
+    color: #6568aa;
+}
+
+.card h3{
+    color: #6568aa;
+    font-family: var(--title-font);
+    font-size: 1.5rem;
+    letter-spacing: 0.2rem;
+}
+
+.card:hover h3{
+    color: #000000;
+}
+
+.card a{
+    background-color: #000000;
+    color: white;
+    letter-spacing: 0.2rem;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    font-family: var(--simple-font);
+}
+
+footer{
+    margin-top: 3rem;
+    text-align: right;
+}
+
+footer a{
+    color : #000000;
+    font-size: 1rem;
+    font-family: var(--simple-font);
+    letter-spacing: 0.1rem;
+    text-decoration: none;  
+    margin: 1rem;
+    margin-bottom: 2rem;
+}
+
+footer a:hover{
+    text-decoration: underline;
+}
+
+
+/* media queries */
+
+
+@media (max-width:960px){
+
+
+    body{
+        margin: 0rem;
+    }
+    
+    header{
+        padding: 1rem 2rem;
+        font-size: 1rem;
+    }
+
+    main{
+        width: 90vw;
+        flex-direction: column;
+        margin: 1rem auto;
+    }
+
+    .card h3{
+        font-size: 1.3rem;
+        letter-spacing: 0.1rem;
+    }
+
+}
+
+@media (max-width:520px){
+
+    .card{
+        width: 20rem;
+        height: 15rem;
+        margin: 1.5rem 1rem;
+        padding: 0.5rem;
+    }
+
+}
