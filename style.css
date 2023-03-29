@@ -2,9 +2,10 @@
     --title-font : 'MuseoModerno', cursive;
     --card-header : 'Bebas Neue', cursive;
     --simple-font : 'Poppins', sans-serif;
-    --background-color : #E7EAF6;
-    --header-background-color : #D3D5FD;
-    --number-color : #4859ae;
+    --background-color : #EEEEEE;
+    --header-background-color : #222831;
+    --defination-title-color : #222831;
+    --card-background-color : #9BA4B4;
 }
 
 
@@ -22,11 +23,17 @@ body{
 header{
     font-family: var(--title-font);
     background-color:var(--header-background-color);
-    padding: 1rem 4rem;
+    padding: 1rem 2rem;
     letter-spacing: 0.3rem;
     border-radius: 0.5rem;
-    color: #0B0B0D;
-    font-size: 1.2rem;
+    /* color: #0B0B0D; */
+    color: #F1F6F8;
+    font-size: 1.4rem;
+    width: 55%;  
+}
+
+header h1{
+    text-shadow: 2px 2px #9ca7fb;
 }
 
 .detail-section {

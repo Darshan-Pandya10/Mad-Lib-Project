@@ -2,9 +2,10 @@
     --title-font : 'MuseoModerno', cursive;
     --card-header : 'Bebas Neue', cursive;
     --simple-font : 'Poppins', sans-serif;
-    --background-color : #E7EAF6;
-    --header-background-color : #D3D5FD;
-    --number-color : #4859ae;
+    --background-color : #EEEEEE;
+    --header-background-color : #222831;
+    --defination-title-color : #222831;
+    --card-background-color : #9BA4B4;
 }
 
 *{
@@ -24,9 +25,19 @@ header{
     padding: 1rem 2rem;
     letter-spacing: 0.3rem;
     border-radius: 0.5rem;
-    color: #0B0B0D;
-    font-size: 1.2rem;
-    width: 75%;
+    /* color: #0B0B0D; */
+    color: #F1F6F8;
+    font-size: 1.4rem;
+    width: 55%;  
+}
+
+header h1{
+    text-shadow: 2px 2px #9ca7fb;
+}
+
+header h1 span {
+    text-shadow: none;
+    font-size: 50px;
 }
 
 
@@ -36,6 +47,7 @@ header{
 
 details{
     border: 2px solid black;
+    border: 2px solid #21273D;
     padding: 1rem;
     margin: 1rem 1rem 2rem 1rem; 
     width: fit-content;
@@ -56,7 +68,7 @@ details p {
 }
 
 p span {
-    color : var(--number-color);
+    color : var(--defination-title-color);
     letter-spacing: 0.1rem;
 }
 
@@ -67,6 +79,7 @@ main {
     border-radius: 0.5rem;
     background-color: #ffffff95;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    background-color: var(--card-background-color);
 }
 
 
@@ -110,7 +123,7 @@ input{
     padding: 1rem;
     outline: none;
     font-size: 1rem;
-
+    letter-spacing: 0.1rem;
 }
 
 .buttons{
@@ -164,6 +177,27 @@ show-input{
 }
 
 
+footer{
+    margin-top: 3rem;
+    text-align: right;
+    padding: 0.5rem;
+}
+
+footer a{
+    color : #000000;
+    font-size: 1rem;
+    font-family: var(--simple-font);
+    letter-spacing: 0.1rem;
+    text-decoration: none;  
+    margin: 1rem;
+    margin-bottom: 2rem;
+}
+
+footer a:hover{
+    text-decoration: underline;
+}
+
+
 /* media queries */
 
 
@@ -187,6 +221,11 @@ show-input{
     
     span{
         font-size: 1.4rem;
+    }
+
+    header h1 span {
+        text-shadow: none;
+        font-size: 40px;
     }
 
 }
