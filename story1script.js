@@ -5,29 +5,29 @@ import { BadWordArray,adjectives,nouns,adverbs,verbs } from "./Arrays.js";
 
 // TAKING USER-INPUTS
 
-var adjective1 = document.querySelector('.adjective1');
-var adjective2 = document.querySelector('.adjective2');
-var adjective3 = document.querySelector('.adjective3');
-var adjective4 = document.querySelector('.adjective4');
-var adverb = document.querySelector('.adverb');
-var color = document.querySelector('.color');
-var noun1 = document.querySelector('.noun1');
-var noun2 = document.querySelector('.noun2');
-var noun3 = document.querySelector('.noun3');
-var noun4 = document.querySelector('.noun4');
-var noun5 = document.querySelector('.noun5');
-var noun6 = document.querySelector('.noun6');
-var noun7 = document.querySelector('.noun7');
-var number = document.querySelector('.number');
-var pluralNoun = document.querySelector('.pluralNoun');
+let adjective1 = document.querySelector('.adjective1');
+let adjective2 = document.querySelector('.adjective2');
+let adjective3 = document.querySelector('.adjective3');
+let adjective4 = document.querySelector('.adjective4');
+let adverb = document.querySelector('.adverb');
+let color = document.querySelector('.color');
+let noun1 = document.querySelector('.noun1');
+let noun2 = document.querySelector('.noun2');
+let noun3 = document.querySelector('.noun3');
+let noun4 = document.querySelector('.noun4');
+let noun5 = document.querySelector('.noun5');
+let noun6 = document.querySelector('.noun6');
+let noun7 = document.querySelector('.noun7');
+let number = document.querySelector('.number');
+let pluralNoun = document.querySelector('.pluralNoun');
 
 
 
 const storyText = document.querySelector('.story-text');
 const warningText = document.querySelector('.warning-text');
-var createButton = document.querySelector('.create-story');
-var inputFileds = Array.from(document.querySelectorAll('input'));
-var clear = document.querySelector('.clear');
+let createButton = document.querySelector('.create-story');
+let inputFileds = Array.from(document.querySelectorAll('input'));
+let clear = document.querySelector('.clear');
 const warningCard = document.querySelector('.warning');
 const hiddenSection = document.querySelector('.hidden-section');
 const close = document.querySelector('.close');
@@ -59,22 +59,22 @@ let adverbButton = document.querySelector('.adverbButton');
 // function for choosing random (noun,adjective,adverb,verb)
 
 function GenerateRandomadjective(){
-    var RandomNumberForAdjective = Math.floor(Math.random() * adjectives.length);
+    let RandomNumberForAdjective = Math.floor(Math.random() * adjectives.length);
     return RandomNumberForAdjective;
 }
 
 function GenerateRandomadverb(){
-    var RandomNumberForAdverb = Math.floor(Math.random() * adverbs.length);
+    let RandomNumberForAdverb = Math.floor(Math.random() * adverbs.length);
     return RandomNumberForAdverb;
 }
 
 function GenerateRandomnoun(){
-    var RandomNumberFornoun = Math.floor(Math.random() * nouns.length);
+    let RandomNumberFornoun = Math.floor(Math.random() * nouns.length);
     return RandomNumberFornoun;
 }
 
 function GenerateRandomverb(){
-    var RandomNumberForverb = Math.floor(Math.random() * verbs.length);
+    let RandomNumberForverb = Math.floor(Math.random() * verbs.length);
     return RandomNumberForverb;
 }
 
