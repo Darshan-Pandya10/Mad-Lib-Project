@@ -5,7 +5,6 @@ import { BadWordArray,adjectives,nouns,adverbs,verbs } from "./Arrays.js";
 
 // TAKING USER-INPUTS
 
-
 var adjective1 = document.querySelector('.adjective1');
 var adjective2 = document.querySelector('.adjective2');
 var adjective3 = document.querySelector('.adjective3');
@@ -29,6 +28,9 @@ const warningText = document.querySelector('.warning-text');
 var createButton = document.querySelector('.create-story');
 var inputFileds = Array.from(document.querySelectorAll('input'));
 var clear = document.querySelector('.clear');
+const warningCard = document.querySelector('.warning');
+const hiddenSection = document.querySelector('.hidden-section');
+const close = document.querySelector('.close');
 
 
 // total counts
@@ -151,53 +153,78 @@ adverbButton.addEventListener('click', () => {
     adverb.value = randomAdjverb;
 })
 
+// function to check if any user inputs contains vulgar word(s).
+
+    function checkVulgarity(){
 
 
+        for(let i = 0 ; i <= BadWordArray.length ; i++) {
 
+            if( adjective1.value == BadWordArray[i] || 
+                adjective2.value == BadWordArray[i] ||
+                adjective3.value == BadWordArray[i] ||
+                adjective4.value == BadWordArray[i] ||
+                adverb.value == BadWordArray[i] || 
+                noun1.value == BadWordArray[i] ||
+                noun2.value == BadWordArray[i] ||
+                noun3.value == BadWordArray[i] ||
+                noun4.value == BadWordArray[i] ||
+                noun5.value == BadWordArray[i] ||
+                noun6.value == BadWordArray[i] ||
+                noun7.value == BadWordArray[i] ||
+                number.value == BadWordArray[i] ||
+                pluralNoun.value == BadWordArray[i] ) {
 
+                // show warning card and message
 
-
-// checking if it includes vulgar words or not.
-    inputFileds.forEach(input => {
-        input.addEventListener('keyup', (e) => {
-            let checkInputArray = [];
-            checkInputArray.push(input.value)
-            if(BadWordArray.includes(checkInputArray[0])){
-                console.log('vulgar word detected');
-                input.classList.add('wrong-input');
-                warningText.innerHTML = 'Please Remove Red Marked Words From Inputs';
+                storyText.innerHTML = ' ';
+                warningCard.classList.add('show-warning');
+                hiddenSection.classList.add('show-hidden-section');
+                warningText.innerHTML = 'Please Enter Appropriate words.';
+                break;
                 }
-    
-            else
-            input.classList.remove('wrong-input');
-            warningText.innerHTML = '';
-    
-        })
-    })
+
+                        
+                else
+                storyText.classList.add('show-storyText');
+
+
+            storyText.innerHTML = `
+            It has often been said that "a dog is a man's best ${noun1.value}." Dogs are very  ${adjective1.value} and can be taught many ${adjective2.value} tricks. A dog can be trained to carry a ${noun2.value} in his mouth. And if you throw his ${noun2.value}, he will run and fetch it. Dogs will also bark  ${adverb.value} if someone tries to break into your ${noun3.value} during the night. One of the most popular canine pets today is the ${color.value} Spaniel. Spaniels have curly ${noun4.value} coats and ${adjective3.value} ears. They also have very ${adjective4.value} dispositions and live to be ${number.value} years old. Other popular dogs are ${noun5.value} Terriers, German ${noun6.value}, and the ${noun7.value} Poodle. Every home should have a loyal dog for a ${pluralNoun.value}.`
+
+            warningText.innerHTML = ' ';
+
+        }
+    }
 
 
     createButton.addEventListener('click',(e) => {
 
         e.preventDefault();
-        storyText.classList.add('show-storyText');
-
-            storyText.innerHTML = `
-            It has often been said that "a dog is a man's best ${noun1.value}." Dogs are very  ${adjective1.value} and can be taught many ${adjective2.value} tricks. A dog can be trained to carry a ${noun2.value} in his mouth. And if you throw his ${noun2.value}, he will run and fetch it. Dogs will also bark  ${adverb.value} if someone tries to break into your ${noun3.value} during the night. One of the most popular canine pets today is the ${color.value} Spaniel. Spaniels have curly ${noun4.value} coats and ${adjective3.value} ears. They also have very ${adjective4.value} dispositions and live to be ${number.value} years old. Other popular dogs are ${noun5.value} Terriers, German ${noun6.value}, and the ${noun7.value} Poodle. Every home should have a loyal dog for a ${pluralNoun.value}.`
-
+        checkVulgarity();
+    
     })
 
 
 
 // clear the inputs and story text.
+
 clear.addEventListener('click',(e) => {
     e.preventDefault();
     storyText.classList.remove('show-storyText');
     inputFileds.forEach(input => {
-       input.value = '';
-       input.classList.remove('wrong-input');
+    input.value = '';
+    input.classList.remove('wrong-input');
     })
 })
 
+
+// close error message
+
+close.addEventListener('click' , () => {
+        warningCard.classList.remove('show-warning');
+        hiddenSection.classList.remove('show-hidden-section');
+})
 
 
 

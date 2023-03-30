@@ -28,6 +28,9 @@ const warningText = document.querySelector('.warning-text');
 var createButton = document.querySelector('.create-story');
 var inputFileds = Array.from(document.querySelectorAll('input'));
 var clear = document.querySelector('.clear');
+const warningCard = document.querySelector('.warning');
+const hiddenSection = document.querySelector('.hidden-section');
+const close = document.querySelector('.close');
 
 
 // total counts
@@ -125,38 +128,49 @@ verbButton.addEventListener('click', () => {
 })
 
 
+// function to check if any user inputs contains vulgar word(s).
 
+function checkVulgarity(){
+    for(let i = 0 ; i <= BadWordArray.length ; i++) {
 
+        if( adjective1.value == BadWordArray[i] || 
+            adjective2.value == BadWordArray[i] ||
+            adjective3.value == BadWordArray[i] ||
+            adjective4.value == BadWordArray[i] ||
+            adjective5.value == BadWordArray[i] ||
+            verb.value == BadWordArray[i] || 
+            noun1.value == BadWordArray[i] ||
+            noun2.value == BadWordArray[i] ||
+            noun3.value == BadWordArray[i] ||
+            pluralNoun1.value == BadWordArray[i] || 
+            pluralNoun2.value == BadWordArray[i] ||
+            partOfABody.value == BadWordArray[i] ) {
 
+                // show warning card and message.
+                storyText.innerHTML = ' ';
+                warningCard.classList.add('show-warning');
+                hiddenSection.classList.add('show-hidden-section');
+                warningText.innerHTML = 'Please Enter Appropriate words.';
+                break;
 
+            }
 
-// checking if it includes vulgar words or not.
-    inputFileds.forEach(input => {
-        input.addEventListener('keyup', (e) => {
-            let checkInputArray = [];
-            checkInputArray.push(input.value);
-            if(BadWordArray.includes(checkInputArray[0])){
-                console.log('vulgar word detected');
-                input.classList.add('wrong-input');
-                warningText.innerHTML = 'Please Remove Red Marked Words From Inputs';
-                }
-    
-            else
-            input.classList.remove('wrong-input');
-            warningText.innerHTML = '';
-    
-        })
-    })
+            else 
+
+            storyText.classList.add('show-storyText');
+
+            storyText.innerHTML = `
+            Bird watching can be more fun than a barrel of ${pluralNoun1.value} Our ${adjective1.value} feathered friends are everywhere, waiting to be watched. An interesting bird to start with is the ${adjective2.value} oriole, which builds its nest in ${noun1.value} trees. Early in spring, we hear the oriole give its mating call, which sounds like this: "${funnyVoice.value}." Then the male and female get together and ${verb.value} Later, the female lays ${number.value} eggs. Isn't that ${adjective3.value} ? Another fascinating bird is the ${adjective4.value}-breasted nuthatch. The nuthatch is very tame. He will fly down and land right on your ${partOfABody.value} and eat out of your ${pluralNoun2.value}. Other birds to watch out for are the red-crested ${noun2.value}, the ${adjective5.value}-necked thrush, and the yellow-bellied ${noun3.value}sucker. Now that you know something about birds, get out there and watch!`;
+
+        }
+    }
 
 
     createButton.addEventListener('click',(e) => {
 
         e.preventDefault();
-        storyText.classList.add('show-storyText');
-
-            storyText.innerHTML = `
-            Bird watching can be more fun than a barrel of ${pluralNoun1.value} Our ${adjective1.value} feathered friends are everywhere, waiting to be watched. An interesting bird to start with is the ${adjective2.value} oriole, which builds its nest in ${noun1.value} trees. Early in spring, we hear the oriole give its mating call, which sounds like this: "${funnyVoice.value}." Then the male and female get together and ${verb.value} Later, the female lays ${number.value} eggs. Isn't that ${adjective3.value} ? Another fascinating bird is the ${adjective4.value}-breasted nuthatch. The nuthatch is very tame. He will fly down and land right on your ${partOfABody.value} and eat out of your ${pluralNoun2.value}. Other birds to watch out for are the red-crested ${noun2.value}, the ${adjective5.value}-necked thrush, and the yellow-bellied ${noun3.value}sucker. Now that you know something about birds, get out there and watch!`;
-
+        checkVulgarity();
+        
     })
 
 
@@ -166,10 +180,20 @@ clear.addEventListener('click',(e) => {
     e.preventDefault();
     storyText.classList.remove('show-storyText');
     inputFileds.forEach(input => {
-       input.value = '';
-       input.classList.remove('wrong-input');
+    input.value = '';
+    input.classList.remove('wrong-input');
     })
 })
+
+
+// close error message
+
+close.addEventListener('click' , () => {
+        warningCard.classList.remove('show-warning');
+        hiddenSection.classList.remove('show-hidden-section');
+})
+
+
 
 
 
