@@ -277,4 +277,9 @@ footer a:hover{
         width: 2.5rem;
     }
 
+    .show-storyText{
+        padding: 1rem;
+        font-size: 1.1rem;
+    }
+
 }

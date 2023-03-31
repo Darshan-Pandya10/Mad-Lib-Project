@@ -133,18 +133,18 @@ verbButton.addEventListener('click', () => {
 function checkVulgarity(){
     for(let i = 0 ; i <= BadWordArray.length ; i++) {
 
-        if( adjective1.value == BadWordArray[i] || 
-            adjective2.value == BadWordArray[i] ||
-            adjective3.value == BadWordArray[i] ||
-            adjective4.value == BadWordArray[i] ||
-            adjective5.value == BadWordArray[i] ||
-            verb.value == BadWordArray[i] || 
-            noun1.value == BadWordArray[i] ||
-            noun2.value == BadWordArray[i] ||
-            noun3.value == BadWordArray[i] ||
-            pluralNoun1.value == BadWordArray[i] || 
-            pluralNoun2.value == BadWordArray[i] ||
-            partOfABody.value == BadWordArray[i] ) {
+        if( adjective1.value.toLowerCase() == BadWordArray[i] || 
+            adjective2.value.toLowerCase() == BadWordArray[i] ||
+            adjective3.value.toLowerCase() == BadWordArray[i] ||
+            adjective4.value.toLowerCase() == BadWordArray[i] ||
+            adjective5.value.toLowerCase() == BadWordArray[i] ||
+            verb.value.toLowerCase() == BadWordArray[i] || 
+            noun1.value.toLowerCase() == BadWordArray[i] ||
+            noun2.value.toLowerCase() == BadWordArray[i] ||
+            noun3.value.toLowerCase() == BadWordArray[i] ||
+            pluralNoun1.value.toLowerCase() == BadWordArray[i] || 
+            pluralNoun2.value.toLowerCase() == BadWordArray[i] ||
+            partOfABody.value.toLowerCase() == BadWordArray[i] ) {
 
                 // show warning card and message.
                 storyText.innerHTML = ' ';

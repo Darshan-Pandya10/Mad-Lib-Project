@@ -23,6 +23,7 @@ let pluralNoun = document.querySelector('.pluralNoun');
 
 
 
+
 const storyText = document.querySelector('.story-text');
 const warningText = document.querySelector('.warning-text');
 let createButton = document.querySelector('.create-story');
@@ -160,20 +161,20 @@ adverbButton.addEventListener('click', () => {
 
         for(let i = 0 ; i <= BadWordArray.length ; i++) {
 
-            if( adjective1.value == BadWordArray[i] || 
-                adjective2.value == BadWordArray[i] ||
-                adjective3.value == BadWordArray[i] ||
-                adjective4.value == BadWordArray[i] ||
-                adverb.value == BadWordArray[i] || 
-                noun1.value == BadWordArray[i] ||
-                noun2.value == BadWordArray[i] ||
-                noun3.value == BadWordArray[i] ||
-                noun4.value == BadWordArray[i] ||
-                noun5.value == BadWordArray[i] ||
-                noun6.value == BadWordArray[i] ||
-                noun7.value == BadWordArray[i] ||
-                number.value == BadWordArray[i] ||
-                pluralNoun.value == BadWordArray[i] ) {
+            if( adjective1.value.toLowerCase() == BadWordArray[i] || 
+                adjective2.value.toLowerCase() == BadWordArray[i] ||
+                adjective3.value.toLowerCase() == BadWordArray[i] ||
+                adjective4.value.toLowerCase() == BadWordArray[i] ||
+                adverb.value.toLowerCase() == BadWordArray[i] || 
+                noun1.value.toLowerCase() == BadWordArray[i] ||
+                noun2.value.toLowerCase() == BadWordArray[i] ||
+                noun3.value.toLowerCase() == BadWordArray[i] ||
+                noun4.value.toLowerCase() == BadWordArray[i] ||
+                noun5.value.toLowerCase() == BadWordArray[i] ||
+                noun6.value.toLowerCase() == BadWordArray[i] ||
+                noun7.value.toLowerCase() == BadWordArray[i] ||
+                number.value.toLowerCase() == BadWordArray[i] ||
+                pluralNoun.value.toLowerCase() == BadWordArray[i] ) {
 
                 // show warning card and message
 
